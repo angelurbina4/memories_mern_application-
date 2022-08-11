@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 import useStyles from './styles';
 import Input from './Input';
+import Calendly from '../Calendly/Calendly';
 
 const Auth = () => {
   const classes = useStyles();
@@ -35,7 +36,8 @@ const Auth = () => {
   const googleSuccess = async (res) => {
     const decoded = jwt_decode(res.credential);
     const clientId = res?.clientId;
-
+    console.log(decoded);
+    console.log(decoded.picture);
     try {
       dispatch({ type: 'AUTH', data: { decoded, clientId} });
       
@@ -86,6 +88,9 @@ const Auth = () => {
             </Grid>
           </form>
       </Paper>
+      <Grid item xs={12} sm={6}>
+        <Calendly/>
+      </Grid>
     </Container>
   );
 };

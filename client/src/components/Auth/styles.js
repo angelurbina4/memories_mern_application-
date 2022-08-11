@@ -31,4 +31,8 @@ export default makeStyles((theme) => ({
     fontSize: "10px",
     color: "gray",
   },
+  calendly: {
+    minWidth: "320px",
+    height: "630px",
+  },
 }));
